@@ -28,6 +28,9 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
+    puts "**** edit comments *****"
+    @comment = Comment.find(params[:comment_id])
+    @post = Post.find(params[:post_id])
   end
 
   # POST /comments

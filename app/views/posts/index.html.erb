@@ -17,7 +17,7 @@
             <p><%= link_to commentUser[:firstname] + " " + commentUser[:lastname], user_path(commentUser), :class => "userNames" %> says: <%= comment[:content] %></p>
             <p class="timeStamp">Timestamp: <%= comment[:created_at] %></p>
             <% if @current_user[:id] == comment[:user_id] %>
-              <span> edit |</span>
+              <%= link_to 'Edit', edit_comment_path(comment), :class => "backButtons" %> |
               <%= link_to 'delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }, :class => "backButtons" %>
             <% elsif @current_user[:id] == post[:user_id] %>
               <%= link_to 'delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }, :class => "backButtons" %>
