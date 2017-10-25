@@ -1,0 +1,6 @@
+<div class="homePage">
+  <h2>Edit Your Account</h2>
+  <%= render 'form', user: @user %>
+  <%= link_to 'Show Profile', @user, :class => "backButtons" %> |
+  <%= link_to 'Go Back', users_path, :class => "backButtons" %>
+</div>

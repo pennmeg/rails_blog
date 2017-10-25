@@ -1,0 +1,10 @@
+<div class="homePage">
+  <% puts "@current_user: #{@current_user.inspect}" %>
+  <% if @current_user %>
+    <h2>Welcome back! Let's start planning your next vacation</h2>
+  <% end %>
+  <%= image_tag("paws_vacation.jpg", :alt => "Pup on Vacation") %>
+  <p>A place to share your favorite travel spots, and tips to visit
+    and eat.</p>
+  <h2 class="quotes">"It's bad manners to keep a vacation waiting."</h2>
+</div>

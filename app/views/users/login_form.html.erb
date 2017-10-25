@@ -1,0 +1,8 @@
+<div class="homePage">
+  <h2>Member Login</h2>
+  <%= form_with url: '/login', method: 'post', local: true do |form| %>
+      Username: <%= form.text_field :username, value: "mtp" %><br>
+      Password: <%= form.text_field :password, value: "mtp123" %><br>
+      <%= form.submit "ENTER", :class => "buttonStyle" %>
+  <% end %>
+</div>

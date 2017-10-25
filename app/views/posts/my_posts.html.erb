@@ -1,0 +1,14 @@
+<div class="homePage">
+  <h2>My Posts</h2>
+  <div class="postInfo">
+    <% @my_posts.each do |post| %>
+      <h3><%= post[:title] %></h3>
+      <p><%= post[:content] %></p>
+      <p class="timeStamp"> Timestamp: <%= post[:created_at] %></p>
+      <%= link_to 'Edit', edit_user_post_path(@current_user[:id], post), :class => "backButtons" %> |
+      <%= link_to 'Delete', user_post_path(@current_user[:id], post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "backButtons" %>
+    <% end %>
+  </div>
+  <hr>
+  <%= link_to 'my comments', my_comments_path, :class => "backButtons" %>
+</div>

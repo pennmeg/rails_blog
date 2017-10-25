@@ -1,0 +1,21 @@
+<div class="homePage">
+<h2>Create a New Post</h2>
+<%= form_with(model: @post, url: user_posts_path(@current_user[:id]), local: true) do |form| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="actions">
+    Subject <br> <%= form.text_field :title, :id => "postStyleOne" %><br> <br>
+    Content <br> <%= form.text_area :content, :id => "postStyleTwo" %><br>
+    <%= form.hidden_field :user_id, value: @current_user[:id] %>
+    <%= form.submit "SUBMIT", :class => "buttonStyle" %>
+  </div>
+<% end %>
+</div>

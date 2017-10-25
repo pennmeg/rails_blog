@@ -1,0 +1,31 @@
+<div class="homePage">
+  <h2>All Tips on Life's a Beach</h2>
+
+  <div class="postInfo">
+    <% @posts.each do |post| %>
+      <% user = User.find(post[:user_id]) %>
+      <h3><%= post[:title] %> by: <%= link_to user[:firstname] + " " + user[:lastname], user_path(user), :class => "userNames" %></h3>
+      <p><%= post[:content] %></p>
+      <p class="timeStamp"> Timestamp: <%= post[:created_at] %></p>
+      <% if @current_user %>
+        <%= link_to 'Add Comment', '/new_comment/' + @current_user[:id].to_s + '/' + post[:id].to_s, :class => "backButtons" %>
+      <% end %>
+      <% @comments.each do |comment| %>
+        <% if post[:id] == comment[:post_id] %>
+          <% commentUser = User.find(comment[:user_id]) %>
+          <div class="commentInfo">
+            <p><%= link_to commentUser[:firstname] + " " + commentUser[:lastname], user_path(commentUser), :class => "userNames" %> says: <%= comment[:content] %></p>
+            <p class="timeStamp">Timestamp: <%= comment[:created_at] %></p>
+            <% if @current_user[:id] == comment[:user_id] %>
+              <span> edit |</span>
+              <%= link_to 'delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }, :class => "backButtons" %>
+            <% elsif @current_user[:id] == post[:user_id] %>
+              <%= link_to 'delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }, :class => "backButtons" %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+      <hr>
+    <% end %>
+  </div>
+</div>

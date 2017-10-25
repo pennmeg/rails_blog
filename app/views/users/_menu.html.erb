@@ -1,0 +1,12 @@
+<nav>
+  <ul>
+    <li><%= link_to "Home", "/home" %> |</li>
+    <li><%= link_to "New Post", new_user_post_path(@current_user) %> |</li>
+    <li><%= link_to "My Posts", my_posts_path %> |</li>
+    <li><%= link_to "View All Posts", user_posts_path(:user_id) %> |</li>
+    <li><%= link_to "View All Users", users_path %> |</li>
+    <li><%= link_to "Edit Profile", edit_user_path(@current_user) %> |</li>
+    <li><%= link_to "Delete Profile", @current_user, method: :delete, data: { confirm: '*** Are you sure you want to delete your account? This action cannot be undone. ***' } %> |</li>
+    <li><%= link_to "Logout", "/logout" %>
+  </ul>
+</nav>

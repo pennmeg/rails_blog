@@ -1,0 +1,86 @@
+body {
+  width: 100%;
+  margin: -10px 0px;
+  font-family: 'Quicksand', sans-serif;
+}
+header {
+  padding: 10px;
+  background-color: #f8d210;
+  color: white;
+}
+header h1 {
+  text-align: center;
+}
+nav {
+  margin-left: -10px;
+  width: 100%;
+  padding-left: 20px;
+  float: left;
+  background-color: #f8d210;
+}
+nav a {
+  padding: 5px;
+  text-transform: lowercase;
+  text-decoration: none;
+  color: #fa26a0;
+}
+nav a:hover, .backButtons:hover {
+  text-transform: uppercase;
+}
+li {
+  display: inline-block;
+}
+ul {
+  text-align: center;
+  list-style-position: inside;
+}
+.homePage {
+  margin: 50px;
+  text-align: center;
+}
+.quotes {
+  color: #6ab8ee;
+}
+.buttonStyle {
+  margin: 12px;
+  width: 150px;
+  background-color: #a8d9f8;
+  border: 2px solid #a8d9f8;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+}
+.buttonStyle:hover {
+  background-color: white;
+}
+.backButtons {
+  color: #fa26a0;
+  text-transform: lowercase;
+  text-decoration: none;
+}
+#postStyleOne, #postStyleTwo {
+  width: 500px;
+}
+#postStyleTwo {
+  height: 200px;
+}
+.userNames {
+  color: #6ab8ee;
+  text-decoration: none;
+}
+.userNames:hover {
+  text-decoration: underline;
+}
+.postInfo {
+  text-align: left;
+}
+.timeStamp {
+  font-size: 10px;
+}
+.commentInfo {
+  margin-left: 50px;
+}
+footer {
+  text-align: center;
+  color: black;
+  padding: 2px;
+  margin-top: 80px;
+}

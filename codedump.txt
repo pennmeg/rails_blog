@@ -1,0 +1,8 @@
+From Posts Index.html.erb (in for loop)
+<td><%= link_to 'Show', user_post_path(post, @current_user[:id]) %></td>
+
+Comments new_user_path
+<%= render 'form', comment: @comment %>
+
+For posts index
+<% comment = Comment.find(comment[:post_id]) %>

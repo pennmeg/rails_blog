@@ -1,0 +1,8 @@
+<div class="homePage">
+  <%= image_tag("sunglasses.png", :alt => "User Avatar") %>
+  <h2><%= @user[:firstname] + " " + @user[:lastname] %></h2>
+  <h3>Username: <%= @user[:username] %></h3>
+  <h3>Member Since: <%= @user[:created_at] %></h3>
+  <%= link_to 'View my Tips', '/profile_posts/' + @user[:id].to_s, :class => "backButtons" %> |
+  <%= link_to 'Go Back', users_path, :class => "backButtons" %>
+</div>

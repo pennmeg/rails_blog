@@ -1,0 +1,8 @@
+<div class="homePage">
+  <% user = User.find(@comment[:user_id]) %>
+  <h3><%= @comment[:content] %></h3>
+  <p class="timeStamp"> Timestamp: <%= @comment[:created_at] %></p>
+  <%= link_to 'view all tips', user_posts_path(:user_id), :class => "backButtons" %> |
+  <span> edit comment | </span>
+  <%= link_to 'delete comment', comment_path(@comment), method: :delete, data: { confirm: 'Are you sure?' }, :class => "backButtons" %>
+</div>

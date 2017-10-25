@@ -1,0 +1,6 @@
+<div class="homePage">
+  <h2>Members Looking for a Vacation</h2>
+  <% @users.each do |user| %>
+    <h3>&raquo; <%= link_to user[:firstname] + " " + user[:lastname], user_path(user), :class => "userNames" %></h3>
+  <% end %>
+</div>

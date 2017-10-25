@@ -1,0 +1,11 @@
+<div class="homePage">
+  <h2>My Comments</h2>
+  <div class="postInfo">
+    <% @my_comments.each do |comment| %>
+      <p><%= comment[:content] %></p>
+      <p class="timeStamp"> Timestamp: <%= comment[:created_at] %></p>
+      <span> edit |</span>
+      <%= link_to 'delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }, :class => "backButtons" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="homePage">
+  <h2><%= @user[:firstname] + " " + @user[:lastname] %>'s Tips</h2>
+  <h3>Username: <%= @user[:username] %></h3>
+  <div class="postInfo">
+    <% @current_posts.each do |post| %>
+      <h3><%= post[:title] %></h3>
+      <p><%= post[:content] %></p>
+      <p class="timeStamp"> Timestamp: <%= post[:created_at] %></p>
+    <% end %>
+  </div>
+  <%= link_to 'View my Profile', user_path(@user), :class => "backButtons" %>
+</div>

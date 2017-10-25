@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MP_Rails_Blog</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <% if @current_user %>
+        <h1>Life's a Beach: Vacation Tips</h1>
+        <%= render :partial => "/users/menu" %>
+      <% else %>
+          <h1>Life's a Beach: Vacation Tips</h1>
+        <nav>
+          <%= link_to "Home", "/home" %> |
+          <%= link_to "Login", "/login_form" %> |
+          <%= link_to "Signup", new_user_path %> |
+          <%= link_to "View All Posts", user_posts_path(:user_id) %>
+        </nav>
+      <% end %>
+    </header>
+    <div id="yield" class="section">
+      <%= yield %>
+    </div>
+    <footer>
+      <% if notice %>
+          <p id="notice"><%= notice %></p>
+          <hr>
+      <% end %>
+      <p>&copy; 2017 Megan Penn</p>
+    </footer>
+  </body>
+</html>
