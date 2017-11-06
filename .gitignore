@@ -21,3 +21,7 @@
 /yarn-error.log
 
 .byebug_history
+
+# == ignore listed files and folders
+_DEV
+config/secrets.yml
